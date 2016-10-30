@@ -11,22 +11,23 @@ const mainStyles = {
 	maxWidth: '1200px'
 };
 const navStyles = {
-	marginTop: '100px',
-	height: '50px',
+	//marginTop: '100px',
+	height: '140px',
 	paddingTop: 'auto',
 	paddingBottom: 'auto',
-}
+	backgroundColour: 'white'
+};
 class MainLayout extends Component {
   render() {
     return (
       <div>
-      	<img src={logo} className='logo' role="presentation" height="90px"/>
-      	<br />
-		<Navbar collapseOnSelect fixedTop fluid style={navStyles}>
+      	<Navbar collapseOnSelect fixedTop fluid style={navStyles}>
+      		<img src={logo} className='logo' role="presentation" height="90px"/>
+      		<br />
 			<Navbar.Header>
 				<Navbar.Toggle />
 			</Navbar.Header>
-			<Navbar.Collapse>
+			<Navbar.Collapse inverse>
 				<Nav pullRight>
 					<NavItem><Link to="/"><h5>Home</h5></Link></NavItem>
 					<NavItem><Link to="/why-pmg"><h5>Why PMG</h5></Link></NavItem>
