@@ -17,6 +17,9 @@ const navStyles = {
 	paddingBottom: 'auto',
 	backgroundColour: 'white'
 };
+const nav = {
+	marginRight: '30px'
+};
 class MainLayout extends Component {
   render() {
     return (
@@ -28,7 +31,7 @@ class MainLayout extends Component {
 				<Navbar.Toggle />
 			</Navbar.Header>
 			<Navbar.Collapse inverse>
-				<Nav pullRight>
+				<Nav pullRight style={nav}>
 					<NavItem><Link to="/"><h5>Home</h5></Link></NavItem>
 					<NavItem><Link to="/why-pmg"><h5>Why PMG</h5></Link></NavItem>
 					<NavItem><Link to="/become-a-lender"><h5>Become a Lender</h5></Link></NavItem>
