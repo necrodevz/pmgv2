@@ -6,6 +6,7 @@ import Home from './components/Home';
 import About from './components/About';
 import WhyPMG from './components/WhyPMG';
 import BecomeALender from './components/BecomeALender';
+import ContactUs from './components/ContactUs';
 import './index.css';
 // import '//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css';
 // import '//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css';
@@ -17,6 +18,7 @@ ReactDOM.render(
     	<Route path='/about' component={About} />
     	<Route path='/why-pmg' component={WhyPMG} />
     	<Route path='/become-a-lender' component={BecomeALender} />
+    	<Route path='/contact-us' component={ContactUs} />
     </Route>
   </Router>,
   document.getElementById('root')

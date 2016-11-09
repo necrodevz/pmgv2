@@ -5,10 +5,11 @@ import logo from './logo.png';
 import './index.css';
 
 const mainStyles = {
-	marginTop: '150px',
+	marginTop: '170px',
 	marginLeft: 'auto',
 	marginRight: 'auto',
-	maxWidth: '1200px'
+	maxWidth: '1200px',
+	marginBottom: '100px'
 };
 const navStyles = {
 	//marginTop: '100px',
@@ -35,9 +36,9 @@ class MainLayout extends Component {
 					<NavItem><Link to="/"><h5>Home</h5></Link></NavItem>
 					<NavItem><Link to="/why-pmg"><h5>Why PMG</h5></Link></NavItem>
 					<NavItem><Link to="/become-a-lender"><h5>Become a Lender</h5></Link></NavItem>
-					<NavItem><Link to="/apply"><h5>Apply Now</h5></Link></NavItem>
+					<NavItem><Link to="/apply-now"><h5>Apply Now</h5></Link></NavItem>
 					<NavItem><Link to="/about"><h5>About PMG</h5></Link></NavItem>
-					<NavItem><Link to="/contact"><h5>Contact PMG</h5></Link></NavItem>
+					<NavItem><Link to="/contact-us"><h5>Contact PMG</h5></Link></NavItem>
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>
