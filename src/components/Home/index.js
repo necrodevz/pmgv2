@@ -6,7 +6,7 @@ import './index.css';
 
 let buffer = {
   marginTop: '150px',
-  marginLeft: '500px'
+  marginLeft: '520px'
 };
 class Home extends Component {
   render() {

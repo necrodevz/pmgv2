@@ -5,7 +5,7 @@ import logo from './logo.png';
 import './index.css';
 
 const mainStyles = {
-	marginTop: '170px',
+	marginTop: '140px',
 	marginLeft: 'auto',
 	marginRight: 'auto',
 	maxWidth: '1200px',
@@ -13,25 +13,25 @@ const mainStyles = {
 };
 const navStyles = {
 	//marginTop: '100px',
-	height: '140px',
+	height: '100px',
 	paddingTop: 'auto',
 	paddingBottom: 'auto',
 	backgroundColour: 'white'
 };
 const nav = {
-	marginRight: '30px'
+	marginRight: '30px',
+	marginTop: '30px'
 };
 class MainLayout extends Component {
   render() {
     return (
       <div>
       	<Navbar collapseOnSelect fixedTop fluid style={navStyles}>
-      		<img src={logo} className='logo' role="presentation" height="90px"/>
-      		<br />
-			<Navbar.Header>
+      		<img src={logo} className='logo col-md-5' role="presentation" height="90px" />
+			<Navbar.Header className="col-md-1">
 				<Navbar.Toggle />
 			</Navbar.Header>
-			<Navbar.Collapse inverse>
+			<Navbar.Collapse pullRight className="col-md-6">
 				<Nav pullRight style={nav}>
 					<NavItem><Link to="/"><h5>Home</h5></Link></NavItem>
 					<NavItem><Link to="/why-pmg"><h5>Why PMG</h5></Link></NavItem>
