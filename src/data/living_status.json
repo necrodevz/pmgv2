@@ -1,0 +1,26 @@
+[
+	{
+		"id":1,
+		"name":"Living with friend/family member"
+	},
+	{
+		"id":2,
+		"name":"Council/Housing Assc. Tenan"
+	},
+	{
+		"id":3,
+		"name":"Home Owner"
+	},
+	{
+		"id":4,
+		"name":"Pay Rent"
+	},
+	{
+		"id":5,
+		"name":"Private Tenant/Lodger"
+	},
+	{
+		"id":6,
+		"name":"Mortgage"
+	}
+]

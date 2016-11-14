@@ -1,0 +1,363 @@
+{
+	"application":[
+		{
+			"id":1,
+			"label":"personal_details",
+			"text":"Personal Details",
+			"type":"node",
+			"fields":[
+				{
+					"id":1,
+					"label":"firstName",
+					"text":"First Name",
+					"type":"text",
+					"value":""
+				},
+				{
+					"id":2,
+					"label":"lastName",
+					"text":"Last Name",
+					"type":"text",
+					"value":""
+				},
+				{
+					"id":3,
+					"label":"email",
+					"text":"Email",
+					"type":"email", 
+					"value":""
+				},
+				{
+					"id":4,
+					"label":"phones",
+					"text":"Phone Numbers",
+					"type":"node",
+					"fields":[
+						{
+							"id":1,
+							"label":"phone_type",
+							"text":"Type of Phone",
+							"type":"select",
+							"value":"",
+							"src":[
+								{
+									"id":1,
+									"code":"digi",
+									"name":"Digicel Mobile"
+								},
+								{
+									"id":2,
+									"code":"flow",
+									"name":"Lime/Flow Mobile"
+								},
+								{
+									"id":3,
+									"code":"landline",
+									"name":"Landline"
+								}
+							]
+						}, 
+						{
+							"id":2,
+							"label":"phone_num",
+							"text":"Phone Number",
+							"type":"phonenum",
+							"value":""
+						}
+					]
+				},
+				{
+					"id":5,
+					"label":"trn",
+					"text":"TRN",
+					"type":"text",
+					"value":""
+				},
+				{
+					"id":6,
+					"label":"address",
+					"text":"address",
+					"type":"textarea",
+					"value":""
+				},
+				{
+					"id":7,
+					"label":"living_status",
+					"text":"Living Status",
+					"type":"select",
+					"value":"",
+					"src":[
+						{
+							"id":1,
+							"name":"Living with friend/family member"
+						},
+						{
+							"id":2,
+							"name":"Council/Housing Assc. Tenan"
+						},
+						{
+							"id":3,
+							"name":"Home Owner"
+						},
+						{
+							"id":4,
+							"name":"Pay Rent"
+						},
+						{
+							"id":5,
+							"name":"Private Tenant/Lodger"
+						},
+						{
+							"id":6,
+							"name":"Mortgage"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id":2,
+			"label":"employment_details",
+			"text":"Employment Details",
+			"type":"node",
+			"fields":[
+				{
+					"id":1,
+					"label":"emp_status",
+					"text":"Employment Status",
+					"type":"select",
+					"value":"",
+					"src":[
+						{
+							"id":1,
+							"status":"Employed"
+						},
+						{
+							"id":2,
+							"status":"Unemployed"
+						},
+						{
+							"id":3,
+							"status":"Self-employed"
+						}
+					]
+				}, 
+				{
+					"id":2,
+					"label":"occupation",
+					"text":"Occupation",
+					"type":"text",
+					"value":""
+				}, 
+				{
+					"id":3,
+					"label":"emp_name",
+					"text":"Employer Name",
+					"type":"text",
+					"value":""
+				},
+				{
+					"id":4,
+					"label":"emp_address",
+					"text":"Employer Address",
+					"type":"textarea",
+					"value":""
+				}
+			]
+		},
+		{
+			"id":3,
+			"label":"financial_details",
+			"text":"Financial Details",
+			"type":"node",
+			"fields":[
+				{
+					"id":1,
+					"label":"bank",
+					"text":"Bank",
+					"type":"select",
+					"value":"",
+					"src":[
+						{
+							"id":1,
+							"code":"BNS",
+							"name":"Bank of Nova Scotia"
+						},
+						{
+							"id":2,
+							"code":"NCB",
+							"name":"National Commercial Bank"
+						},
+						{
+							"id":3,
+							"code":"FGB",
+							"name":"First Global Bank"
+						},
+						{
+							"id":4,
+							"code":"SBJ",
+							"name":"Sagicor Bank"
+						}
+					]
+				}, 
+				{
+					"id":2,
+					"depends":1,
+					"label":"branch",
+					"text":"Choose Branch",
+					"type":"text"
+				},
+				{
+					"id":3,
+					"label":"account_no",
+					"text":"Bank Account Number",
+					"type":"text",
+					"value":""
+				}
+			]
+		}, 
+		{
+			"id":4,
+			"label":"files",
+			"text":"Upload files",
+			"type":"node",
+			"fields":[
+				{
+					"id":1,
+					"label":"identification",
+					"text":"Valid Identification",
+					"type":"file",
+					"value":"",
+					"helptext":"Only Driver's  Licence, Passport and National ID will be accepted"
+				},
+				{
+					"id":2,
+					"label":"proofOfIncome",
+					"text":"Proof of Income",
+					"type":"file",
+					"value":"",
+					"helptext":"Your 2 most recent wage slips or your benefits/pension payments letter etc. Include all money received."
+				},
+				{
+					"id":3, 
+					"label":"proofOfAddress",
+					"text":"Proof of Address",
+					"type":"file",
+					"value":"",
+					"helptext":"Utility bills must be no older than 30 days"
+				}
+			]
+		}, 
+		{
+			"id":5,
+			"label":"loan_details",
+			"text":"Loan Details",
+			"type":"node",
+			"fields":[
+				{
+					"id":1,
+					"label":"date",
+					"text":"Date of Application",
+					"type":"date",
+					"value":"",
+					"readonly":"true"
+				},
+				{
+					"id":2,
+					"label":"amount",
+					"text":"What is the amount you would like to borrow?",
+					"type":"currency",
+					"value":""
+				},
+				{
+					"id":3,
+					"label":"disbursement",
+					"text":"Choose method of Disbursement",
+					"type":"select",
+					"src":[
+						{
+							"id":1,
+							"name":"Cheque"
+						},
+						{
+							"id":2,
+							"name":"Direct Deposit"
+						}
+					]
+				},
+				{
+					"id":4,
+					"label":"disbursementDate",
+					"text":"When would you like to receive your disbursement?",
+					"type":"date",
+					"value":""
+				}
+			]	
+		},
+		{
+			"id":6,
+			"label":"liability_details",
+			"text":"Liability Details",
+			"type":"node",
+			"fields":[
+				{
+					"id":1,
+					"label":"liability_types",
+					"text":"Select all Liabilities that apply",
+					"type":"node",
+					"fields":[
+						{
+							"id":1,
+							"label":"loans",
+							"text":"Loan Company or Bank",
+							"type":"checkbox",
+							"value":""
+						}, 
+						{
+							"id":2,
+							"label":"bills",
+							"text":"Outstanding Bills",
+							"type":"checkbox",
+							"value":""
+						},
+						{
+							"id":3,
+							"label":"personal_loans",
+							"text":"Personal Loans",
+							"type":"checkbox",
+							"value":""
+						},
+						{
+							"id":4,
+							"label":"cc_balance",
+							"text":"Credit Card Balances",
+							"type":"checkbox",
+							"value":""
+						},
+						{
+							"id":5,
+							"label":"insolvency",
+							"text":"Insolvency",
+							"type":"checkbox",
+							"value":""
+						},
+						{
+							"id":6,
+							"label":"mortgages",
+							"text":"Mortgages",
+							"type":"checkbox",
+							"value":""
+						},
+						{
+							"id":7,
+							"label":"court_judgements",
+							"text":"Court Judgements",
+							"type":"checkbox",
+							"value":""
+						}
+					]
+				}
+			]
+		}
+	]
+}

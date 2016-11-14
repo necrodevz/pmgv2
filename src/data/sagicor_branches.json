@@ -1,0 +1,62 @@
+[
+	{
+		"id":1,
+		"name":"Duke and Tower Street"
+	},
+	{
+		"id":2,
+		"name":"Dominica Drive (Head Office)"
+	},
+	{
+		"id":3,
+		"name":"UpPark Camp"
+	},
+	{
+		"id":4,
+		"name":"Hope Road"
+	},
+	{
+		"id":5,
+		"name":"Fairview"
+	},
+	{
+		"id":6,
+		"name":"Mandeville"
+	},
+	{
+		"id":7,
+		"name":"Half-Way Tree"
+	},
+	{
+		"id":8,
+		"name":"Liguanea"
+	}, 
+	{
+		"id":9,
+		"name":"Tropical Plaza"
+	},
+	{
+		"id":10,
+		"name":"May Pen"
+	},
+	{
+		"id":11,
+		"name":"Montego Bay"
+	},
+	{
+		"id":12,
+		"name":"Ocho Rios"
+	},
+	{
+		"id":13,
+		"name":"Portmore"
+	},
+	{
+		"id":14,
+		"name":"Savanna-La-Mar"
+	},
+	{
+		"id":15,
+		"name":"Black River"
+	}
+]

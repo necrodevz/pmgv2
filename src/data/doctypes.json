@@ -1,0 +1,22 @@
+[
+	{
+		"id":1,
+		"type":"Valid Identification",
+		"helptext":"Only Driver's Licence, Passport and National ID will be accepted"
+	},
+	{
+		"id":2,
+		"type":"Proof of Income",
+		"helptext":"Your 2 most recent wage slips or your benefits/pension payments letter etc. Include all money received."
+	},
+	{
+		"id":3, 
+		"type":"Proof of Address",
+		"helptext":"Utility bills must be no older than 30 days"
+	},
+	{
+		"id":4,
+		"type":"Salary Deduction Form",
+		"helptext":"This will be emailed to the email you provided above. Please have this signed and stamped by the relevant departments"
+	}
+]

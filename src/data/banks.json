@@ -1,0 +1,22 @@
+[
+	{
+		"id":1,
+		"code":"BNS",
+		"name":"Bank of Nova Scotia"
+	},
+	{
+		"id":2,
+		"code":"NCB",
+		"name":"National Commercial Bank"
+	},
+	{
+		"id":3,
+		"code":"FGB",
+		"name":"First Global Bank"
+	},
+	{
+		"id":4,
+		"code":"SBJ",
+		"name":"Sagicor Bank"
+	}
+]

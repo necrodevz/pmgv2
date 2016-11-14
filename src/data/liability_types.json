@@ -1,0 +1,30 @@
+[
+	{
+		"id":1,
+		"type":"Loan Company or Bank"
+	}, 
+	{
+		"id":2,
+		"type":"Outstanding Bills"
+	},
+	{
+		"id":3,
+		"type":"Personal Loans"
+	},
+	{
+		"id":4,
+		"type":"Credit Card Balances"
+	},
+	{
+		"id":5,
+		"type":"Insolvency"
+	},
+	{
+		"id":6,
+		"type":"Mortgages"
+	}, 
+	{
+		"id":7,
+		"type":"Court Judgements"
+	}
+]

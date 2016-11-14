@@ -1,0 +1,14 @@
+[
+	{
+		"id":1,
+		"status":"Employed"
+	},
+	{
+		"id":2,
+		"status":"Unemployed"
+	},
+	{
+		"id":3,
+		"status":"Self-employed"
+	}
+],
