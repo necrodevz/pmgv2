@@ -1,31 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import {FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
+import {updateMessage, submitMessage} from '../../actions'
+import { connect } from 'react-redux'
+
 
 class ContactUs extends Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      name: "",
-      email:"",
-      message:""
-    };
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handleMessageChange = this.handleMessageChange.bind(this);
-    this.handleSubmit =  this.handleSubmit.bind(this);
+    super(props)
+    console.log(props)
+    this.handleSubmit =  this.handleSubmit.bind(this)
+    this.handleChange =  this.handleChange.bind(this)
   }
-  handleNameChange(e) {
-    this.setState({name: e.target.value});
-  }
-  handleEmailChange(e) {
-    this.setState({email: e.target.value});
-  }
-  handleMessageChange(e) {
-    this.setState({message: e.target.value});
+  handleChange(e) {
+    let payload = {}
+    e.preventDefault()
+    payload = {
+      key: e.target.id,
+      value: e.target.value
+    }
+    this.props.dispatch(updateMessage(payload))
+    console.log(this.props)
   }
   handleSubmit(e) {
-    e.preventDefault();
-    alert('Name: ' + this.state.name);
+    e.preventDefault()
+    submitMessage()
+    console.log(this.props)
   }
   render() {
     return (
@@ -42,13 +41,13 @@ class ContactUs extends Component {
             <form onSubmit={this.handleSubmit}>
               <FormGroup controlId='contact-form'>
                 <ControlLabel>Name: </ControlLabel>
-                <FormControl type="text" placeholder="Enter Name" value={this.state.name} onChange={this.handleNameChange} required/>
+                <FormControl type="text" id="name" placeholder="Enter Name" value={this.props.name} onChange={this.handleChange} required/>
                 <br />
                 <ControlLabel>Email: </ControlLabel>
-                <FormControl type="email" placeholder="Enter Email" value={this.state.email} onChange={this.handleEmailChange} required/>
+                <FormControl type="email" id="email" placeholder="Enter Email" value={this.props.email} onChange={this.handleChange} required/>
                 <br />
                 <ControlLabel>Message: </ControlLabel>
-                <FormControl componentClass="textarea" placeholder="Enter Message" value={this.state.message} onChange={this.handleMessageChange} required/>
+                <FormControl componentClass="textarea" id="message" placeholder="Enter Message" value={this.props.message} onChange={this.handleChange} required/>
                 <br />
                 <input type="submit" value="Submit" className="btn btn-primary" required/>
               </FormGroup>
@@ -63,4 +62,8 @@ class ContactUs extends Component {
   }
 } 
 
-export default ContactUs;
+var mapStateToProps = (state, ownProps) => {
+  return state.message
+}
+
+export default connect(mapStateToProps)(ContactUs)
