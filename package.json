@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "classnames": "^2.2.5",
     "isomorphic-fetch": "^2.2.1",
     "react": "^15.3.2",
     "react-ajax": "^0.1.1",
@@ -19,7 +20,10 @@
     "react-router-redux": "^4.0.7",
     "react-slick": "^0.14.5",
     "redux": "^3.6.0",
+    "redux-form": "^6.4.3",
     "redux-thunk": "^2.1.0",
+    "sendgrid": "^4.7.1",
+    "sendgrid-mailer": "^1.0.7",
     "slick-carousel": "^1.6.0"
   },
   "scripts": {

@@ -12,7 +12,7 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <div id="indexTop">    
+        <div id="indexTop">   
           <div className="holder">
             <div>
               <div className="col-md-4">

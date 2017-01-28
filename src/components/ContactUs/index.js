@@ -1,30 +1,152 @@
 import React, { Component} from 'react';
-import {FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
-import {updateMessage, submitMessage} from '../../actions'
-import { connect } from 'react-redux'
+import {FormGroup, FormControl, ControlLabel} from 'react-bootstrap'
+//import {submitMessage} from '../../actions'
+import axios from 'axios'
+import config from '../../config'
+//import { Field, reduxForm } from 'redux-form';
+//import { connect } from 'react-redux'
 
 
 class ContactUs extends Component {
   constructor(props) {
     super(props)
-    console.log(props)
-    this.handleSubmit =  this.handleSubmit.bind(this)
-    this.handleChange =  this.handleChange.bind(this)
+    this.state ={
+        name:"",
+        email:"",
+        message:""
+      }
+    
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
-  handleChange(e) {
-    let payload = {}
-    e.preventDefault()
-    payload = {
-      key: e.target.id,
-      value: e.target.value
+  getInitialState = () => {
+    return {
+      name:"",
+      email:"",
+      message:""
     }
-    this.props.dispatch(updateMessage(payload))
-    console.log(this.props)
   }
-  handleSubmit(e) {
+  updateMessage(input, state = this.state){
+    switch (input.id){
+      case "name":
+        return {
+            name:input.value
+        }
+      case "email":
+        return {
+            email:input.value
+        }
+      case "message":
+        return {
+            message:input.value
+        }
+      default:
+        return state
+    }
+  }
+  handleChange = (e) => {
     e.preventDefault()
-    submitMessage()
-    console.log(this.props)
+    console.log(e)
+    this.setState(this.updateMessage(e.target))
+    console.log(this.state)
+  }
+  handleSubmit = (e) => {
+    let message = {}
+    e.preventDefault()
+    console.log(this.state)
+    message = {
+      "name":this.state.name,
+      "email":this.state.email,
+      "message":this.state.message
+    }
+    this.submitMessage(message)
+    this.setState(this.getInitialState())
+    //this.props.router.push('/')
+  }
+  submitMessage(message) {
+    this.send(message)
+      .then((response) =>{
+        console.log(response)
+        this.getInitialState()
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  /*
+  |* To be done: submit message to leads model for CRM management
+  |* Or email this to the main entry point for CRM leads
+  |*
+  */
+  
+  /*
+	axios.post('https://pmg-ruby-necrodevz.c9users.io/leads.json', message)
+	  .then((response)=>{
+	    console.log(response)
+	  })
+	  .catch((error)=>{
+	    console.log(error.message)
+	  })
+	
+	return function(dispatch) {
+		//dispatch(addMessage(message));
+		// eslint-disable-next-line
+		(message) => {
+			return axios.post(config.MAIL_URL, 
+				{
+					"personalizations": 
+						[
+							{
+								"to": [
+									{
+							          "email": message.email,
+							          "name": message.name
+							        }
+					      		],
+					      		"subject": "Message received from PMG WebApp"
+					    	}
+					  	],
+					  	"from": 
+					  		{
+								"email": config.SYSTEM_EMAIL
+							},
+					  	"content": [
+					    	{
+					      		"type": "text/plain",
+					      		"value": message.message
+					    	}
+					  	]
+				},
+				{
+					// eslint-disable-next-line
+					//headers: {`Authorization: Bearer ${config.MAIL_TOKEN}`},
+					headers: {'Content-Type': 'application/json'},
+				}
+			)
+			.then((response) => {
+	//			sendMessageSuccess()
+				console.log(response)
+			})
+			.catch((error) => {
+				console.log(error)
+			})
+		}
+	}
+	*/
+  }
+  send = (message) =>{
+    const mailer = require('sendgrid-mailer').config(config.API_KEY);
+    //var response = {}
+    //Create email data 
+    const email = {
+      to: 'info@dkblake.com',
+      from: message.email,
+      subject: 'TEST',
+      html: `<p>${message.message}</p>`,
+    };
+     
+    //Send away 
+    return mailer.send(email); //Returns promise
+//    return response
   }
   render() {
     return (
@@ -41,13 +163,13 @@ class ContactUs extends Component {
             <form onSubmit={this.handleSubmit}>
               <FormGroup controlId='contact-form'>
                 <ControlLabel>Name: </ControlLabel>
-                <FormControl type="text" id="name" placeholder="Enter Name" value={this.props.name} onChange={this.handleChange} required/>
+                <FormControl type="text" id="name" placeholder="Enter Name" onChange={this.handleChange} value={this.state.message.name} required/>
                 <br />
                 <ControlLabel>Email: </ControlLabel>
-                <FormControl type="email" id="email" placeholder="Enter Email" value={this.props.email} onChange={this.handleChange} required/>
+                <FormControl type="email" id="email" placeholder="Enter Email" onChange={this.handleChange} value={this.state.message.email} required/>
                 <br />
                 <ControlLabel>Message: </ControlLabel>
-                <FormControl componentClass="textarea" id="message" placeholder="Enter Message" value={this.props.message} onChange={this.handleChange} required/>
+                <FormControl componentClass="textarea" id="message" placeholder="Enter Message" onChange={this.handleChange} value={this.state.message.message} required/>
                 <br />
                 <input type="submit" value="Submit" className="btn btn-primary" required/>
               </FormGroup>
@@ -62,8 +184,17 @@ class ContactUs extends Component {
   }
 } 
 
-var mapStateToProps = (state, ownProps) => {
-  return state.message
-}
+//var mapStateToProps = (state, ownProps) => {
+  //return state.message
+//}
 
-export default connect(mapStateToProps)(ContactUs)
+export default ContactUs
+
+/*
+// Decorate the form component
+ContactUs = reduxForm({
+  form: 'contact' // a unique name for this form
+})(ContactUs);
+
+export default ContactUs;
+*/
