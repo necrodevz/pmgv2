@@ -7,7 +7,7 @@ import Home from '../components/Home'
 import About from '../components/About'
 import WhyPMG from '../components/WhyPMG'
 import BecomeALender from '../components/BecomeALender'
-import ContactUs from '../components/ContactUs'
+//import ContactUs from '../components/ContactUs'
 import NotFound from '../components/NotFound'
 
 var history = browserHistory //syncHistoryWithStore(browserHistory,store);
@@ -21,7 +21,7 @@ class Routes extends Component {
 			      	<Route path='/about' component={About} />
 			      	<Route path='/why-pmg' component={WhyPMG} />
 			      	<Route path='/become-a-lender' component={BecomeALender} />
-			      	<Route path='/contact-us' component={ContactUs} />
+			      {/*	<Route path='/contact-us' component={ContactUs} /> */}
 			      	<Route path="*" component={NotFound} />
 			    </Route>
 			</Router>
