@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import {Navbar, Nav, NavItem} from 'react-bootstrap';
+import {Navbar, Nav, NavItem, Button} from 'react-bootstrap';
 import logo from './logo.png';
 import './index.css';
 
@@ -36,9 +36,9 @@ class MainLayout extends Component {
 					<NavItem><Link to="/"><h5>Home</h5></Link></NavItem>
 					<NavItem><Link to="/why-pmg"><h5>Why PMG</h5></Link></NavItem>
 					<NavItem><Link to="/become-a-lender"><h5>Become a Lender</h5></Link></NavItem>
-					<NavItem><Link to="/apply-now"><h5>Apply Now</h5></Link></NavItem>
 					<NavItem><Link to="/about"><h5>About PMG</h5></Link></NavItem>
 					<NavItem><Link to="/contact-us"><h5>Contact PMG</h5></Link></NavItem>
+					<NavItem><Button>Signup/Login</Button></NavItem>
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>

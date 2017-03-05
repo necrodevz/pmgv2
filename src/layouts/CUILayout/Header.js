@@ -3,12 +3,12 @@ import React from 'react';
 import {Navbar} from 'react-bootstrap';
 import logo from './logo.png'
 
-const Header = () => {
+const Header = ({logoStyle}) => {
     return (
         <header>
             <Navbar collapseOnSelect fixedTop fluid>
                 <Navbar.Header >
-                    <a href="/"><span><img src={ logo } role="presentation" /></span></a>
+                    <a href="/"><span><img src={ logo } role="presentation" width="500px" /></span></a>
                 </Navbar.Header>
             </Navbar>
         </header>
